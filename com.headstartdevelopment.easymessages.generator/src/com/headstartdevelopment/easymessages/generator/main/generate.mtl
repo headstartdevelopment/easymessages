@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module generate('http://com/headstartdevelopment/easymessages/messages')]
+
+
+[template public generateElement(aMessageManagement : MessageManagement)]
+[comment @main/]
+[file (aMessageManagement.id, false, 'UTF-8')]
+
+[/file]
+[/template]
