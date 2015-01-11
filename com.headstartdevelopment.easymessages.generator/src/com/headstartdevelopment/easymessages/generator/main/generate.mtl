@@ -4,7 +4,31 @@
 
 [template public generateElement(aMessageManagement : MessageManagement)]
 [comment @main/]
-[file (aMessageManagement.id, false, 'UTF-8')]
+[file (aMessageManagement.id + '.java', false, 'UTF-8')]
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+class [aMessageManagement.id/] {
+
+	[for (msg : Message | aMessageManagement.messages)]
+	[generateMsgString(msg)/]
+	[/for]
+	
+	public static String createMessage(String msgId, String... params) {
+		ResourceBundle messages = ResourceBundle.getBundle("[aMessageManagement.id/]", Locale.getDefault());
+		return messages.getString(msgId);
+	}
+
+	public static String createMessage(Locale locale, String msgId, String... params) {
+		ResourceBundle messages = ResourceBundle.getBundle("[aMessageManagement.id/]", locale);
+		return messages.getString(msgId);
+	}
+}	
 
 [/file]
+[/template]
+
+
+[template public generateMsgString(msg : Message)]
+public static String [msg.id/] = "[msg.id/]";
 [/template]
