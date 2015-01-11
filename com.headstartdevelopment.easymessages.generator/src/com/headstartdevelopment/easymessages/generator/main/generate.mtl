@@ -14,6 +14,13 @@ class [aMessageManagement.id/] {
 	[generateMsgString(msg)/]
 	[/for]
 	
+	[comment TODO: Check how to handle the package in which the file and properties should be created. We need some input parameters for that.
+					Also add a note for the users that the properties folder needs to be on the class path.
+					How can we use this tool in combination with maven.
+					For editing the model it would be nice to have a table view. Check sirius on that!
+ /]
+	
+
 	public static String createMessage(String msgId, String... params) {
 		ResourceBundle messages = ResourceBundle.getBundle("[aMessageManagement.id/]", Locale.getDefault());
 		return messages.getString(msgId);
