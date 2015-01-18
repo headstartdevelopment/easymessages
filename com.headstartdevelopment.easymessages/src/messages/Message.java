@@ -2,6 +2,7 @@
  */
 package messages;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link messages.Message#getId <em>Id</em>}</li>
+ *   <li>{@link messages.Message#getLocalizedTexts <em>Localized Texts</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,5 +48,23 @@ public interface Message extends EObject {
 	 * @generated
 	 */
 	void setId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Localized Texts</b></em>' containment reference list.
+	 * The list contents are of type {@link messages.LocalizedText}.
+	 * It is bidirectional and its opposite is '{@link messages.LocalizedText#getMessage <em>Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Localized Texts</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Localized Texts</em>' containment reference list.
+	 * @see messages.MessagesPackage#getMessage_LocalizedTexts()
+	 * @see messages.LocalizedText#getMessage
+	 * @model opposite="message" containment="true"
+	 * @generated
+	 */
+	EList<LocalizedText> getLocalizedTexts();
 
 } // Message

@@ -33,6 +33,15 @@ class [aMessageManagement.id/] {
 }	
 
 [/file]
+
+[comment Generate properties files /]
+[for (locale : Locale | aMessageManagement.locales)]
+[file (aMessageManagement.id + '_' + locale.code + '.properties', false, 'UTF-8')]
+[for (localeText : LocalizedText | locale.localizedTexts)]
+[localeText.message.id/]=[localeText.text/]
+[/for]
+[/file]
+[/for]
 [/template]
 
 

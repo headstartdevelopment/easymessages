@@ -58,6 +58,8 @@ public class MessagesFactoryImpl extends EFactoryImpl implements MessagesFactory
 		switch (eClass.getClassifierID()) {
 			case MessagesPackage.MESSAGE_MANAGEMENT: return createMessageManagement();
 			case MessagesPackage.MESSAGE: return createMessage();
+			case MessagesPackage.LOCALIZED_TEXT: return createLocalizedText();
+			case MessagesPackage.LOCALE: return createLocale();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -81,6 +83,26 @@ public class MessagesFactoryImpl extends EFactoryImpl implements MessagesFactory
 	public Message createMessage() {
 		MessageImpl message = new MessageImpl();
 		return message;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LocalizedText createLocalizedText() {
+		LocalizedTextImpl localizedText = new LocalizedTextImpl();
+		return localizedText;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Locale createLocale() {
+		LocaleImpl locale = new LocaleImpl();
+		return locale;
 	}
 
 	/**

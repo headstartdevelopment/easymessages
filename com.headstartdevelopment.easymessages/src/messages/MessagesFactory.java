@@ -40,6 +40,24 @@ public interface MessagesFactory extends EFactory {
 	Message createMessage();
 
 	/**
+	 * Returns a new object of class '<em>Localized Text</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Localized Text</em>'.
+	 * @generated
+	 */
+	LocalizedText createLocalizedText();
+
+	/**
+	 * Returns a new object of class '<em>Locale</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Locale</em>'.
+	 * @generated
+	 */
+	Locale createLocale();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

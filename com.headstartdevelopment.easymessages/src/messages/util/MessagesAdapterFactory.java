@@ -76,6 +76,14 @@ public class MessagesAdapterFactory extends AdapterFactoryImpl {
 				return createMessageAdapter();
 			}
 			@Override
+			public Adapter caseLocalizedText(LocalizedText object) {
+				return createLocalizedTextAdapter();
+			}
+			@Override
+			public Adapter caseLocale(Locale object) {
+				return createLocaleAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -120,6 +128,34 @@ public class MessagesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMessageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link messages.LocalizedText <em>Localized Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see messages.LocalizedText
+	 * @generated
+	 */
+	public Adapter createLocalizedTextAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link messages.Locale <em>Locale</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see messages.Locale
+	 * @generated
+	 */
+	public Adapter createLocaleAdapter() {
 		return null;
 	}
 

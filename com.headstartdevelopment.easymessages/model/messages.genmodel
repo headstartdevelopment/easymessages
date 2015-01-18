@@ -9,9 +9,21 @@
     <genClasses ecoreClass="messages.ecore#//MessageManagement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute messages.ecore#//MessageManagement/id"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference messages.ecore#//MessageManagement/messages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference messages.ecore#//MessageManagement/locales"/>
     </genClasses>
     <genClasses ecoreClass="messages.ecore#//Message">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute messages.ecore#//Message/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference messages.ecore#//Message/localizedTexts"/>
+    </genClasses>
+    <genClasses ecoreClass="messages.ecore#//LocalizedText">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute messages.ecore#//LocalizedText/text"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference messages.ecore#//LocalizedText/locale"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference messages.ecore#//LocalizedText/message"/>
+    </genClasses>
+    <genClasses ecoreClass="messages.ecore#//Locale">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute messages.ecore#//Locale/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference messages.ecore#//Locale/localizedTexts"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute messages.ecore#//Locale/code"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

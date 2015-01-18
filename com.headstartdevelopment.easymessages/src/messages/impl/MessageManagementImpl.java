@@ -3,22 +3,17 @@
 package messages.impl;
 
 import java.util.Collection;
-
+import messages.Locale;
 import messages.Message;
 import messages.MessageManagement;
 import messages.MessagesPackage;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -31,6 +26,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link messages.impl.MessageManagementImpl#getId <em>Id</em>}</li>
  *   <li>{@link messages.impl.MessageManagementImpl#getMessages <em>Messages</em>}</li>
+ *   <li>{@link messages.impl.MessageManagementImpl#getLocales <em>Locales</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +62,16 @@ public class MessageManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected EList<Message> messages;
+
+	/**
+	 * The cached value of the '{@link #getLocales() <em>Locales</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLocales()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Locale> locales;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,11 +130,25 @@ public class MessageManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Locale> getLocales() {
+		if (locales == null) {
+			locales = new EObjectContainmentEList<Locale>(Locale.class, this, MessagesPackage.MESSAGE_MANAGEMENT__LOCALES);
+		}
+		return locales;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MessagesPackage.MESSAGE_MANAGEMENT__MESSAGES:
 				return ((InternalEList<?>)getMessages()).basicRemove(otherEnd, msgs);
+			case MessagesPackage.MESSAGE_MANAGEMENT__LOCALES:
+				return ((InternalEList<?>)getLocales()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -145,6 +165,8 @@ public class MessageManagementImpl extends MinimalEObjectImpl.Container implemen
 				return getId();
 			case MessagesPackage.MESSAGE_MANAGEMENT__MESSAGES:
 				return getMessages();
+			case MessagesPackage.MESSAGE_MANAGEMENT__LOCALES:
+				return getLocales();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,6 +187,10 @@ public class MessageManagementImpl extends MinimalEObjectImpl.Container implemen
 				getMessages().clear();
 				getMessages().addAll((Collection<? extends Message>)newValue);
 				return;
+			case MessagesPackage.MESSAGE_MANAGEMENT__LOCALES:
+				getLocales().clear();
+				getLocales().addAll((Collection<? extends Locale>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -183,6 +209,9 @@ public class MessageManagementImpl extends MinimalEObjectImpl.Container implemen
 			case MessagesPackage.MESSAGE_MANAGEMENT__MESSAGES:
 				getMessages().clear();
 				return;
+			case MessagesPackage.MESSAGE_MANAGEMENT__LOCALES:
+				getLocales().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,6 +228,8 @@ public class MessageManagementImpl extends MinimalEObjectImpl.Container implemen
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case MessagesPackage.MESSAGE_MANAGEMENT__MESSAGES:
 				return messages != null && !messages.isEmpty();
+			case MessagesPackage.MESSAGE_MANAGEMENT__LOCALES:
+				return locales != null && !locales.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link messages.MessageManagement#getId <em>Id</em>}</li>
  *   <li>{@link messages.MessageManagement#getMessages <em>Messages</em>}</li>
+ *   <li>{@link messages.MessageManagement#getLocales <em>Locales</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,5 +66,21 @@ public interface MessageManagement extends EObject {
 	 * @generated
 	 */
 	EList<Message> getMessages();
+
+	/**
+	 * Returns the value of the '<em><b>Locales</b></em>' containment reference list.
+	 * The list contents are of type {@link messages.Locale}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Locales</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Locales</em>' containment reference list.
+	 * @see messages.MessagesPackage#getMessageManagement_Locales()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Locale> getLocales();
 
 } // MessageManagement

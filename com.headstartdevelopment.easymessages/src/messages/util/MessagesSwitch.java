@@ -78,6 +78,18 @@ public class MessagesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case MessagesPackage.LOCALIZED_TEXT: {
+				LocalizedText localizedText = (LocalizedText)theEObject;
+				T result = caseLocalizedText(localizedText);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MessagesPackage.LOCALE: {
+				Locale locale = (Locale)theEObject;
+				T result = caseLocale(locale);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -109,6 +121,36 @@ public class MessagesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMessage(Message object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Localized Text</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Localized Text</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLocalizedText(LocalizedText object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Locale</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Locale</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLocale(Locale object) {
 		return null;
 	}
 

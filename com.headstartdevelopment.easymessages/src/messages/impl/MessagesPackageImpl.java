@@ -2,6 +2,8 @@
  */
 package messages.impl;
 
+import messages.Locale;
+import messages.LocalizedText;
 import messages.Message;
 import messages.MessageManagement;
 import messages.MessagesFactory;
@@ -34,6 +36,20 @@ public class MessagesPackageImpl extends EPackageImpl implements MessagesPackage
 	 * @generated
 	 */
 	private EClass messageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass localizedTextEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass localeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -128,6 +144,15 @@ public class MessagesPackageImpl extends EPackageImpl implements MessagesPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getMessageManagement_Locales() {
+		return (EReference)messageManagementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMessage() {
 		return messageEClass;
 	}
@@ -139,6 +164,87 @@ public class MessagesPackageImpl extends EPackageImpl implements MessagesPackage
 	 */
 	public EAttribute getMessage_Id() {
 		return (EAttribute)messageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMessage_LocalizedTexts() {
+		return (EReference)messageEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLocalizedText() {
+		return localizedTextEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLocalizedText_Text() {
+		return (EAttribute)localizedTextEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLocalizedText_Locale() {
+		return (EReference)localizedTextEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLocalizedText_Message() {
+		return (EReference)localizedTextEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLocale() {
+		return localeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLocale_Id() {
+		return (EAttribute)localeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLocale_LocalizedTexts() {
+		return (EReference)localeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLocale_Code() {
+		return (EAttribute)localeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -172,9 +278,21 @@ public class MessagesPackageImpl extends EPackageImpl implements MessagesPackage
 		messageManagementEClass = createEClass(MESSAGE_MANAGEMENT);
 		createEAttribute(messageManagementEClass, MESSAGE_MANAGEMENT__ID);
 		createEReference(messageManagementEClass, MESSAGE_MANAGEMENT__MESSAGES);
+		createEReference(messageManagementEClass, MESSAGE_MANAGEMENT__LOCALES);
 
 		messageEClass = createEClass(MESSAGE);
 		createEAttribute(messageEClass, MESSAGE__ID);
+		createEReference(messageEClass, MESSAGE__LOCALIZED_TEXTS);
+
+		localizedTextEClass = createEClass(LOCALIZED_TEXT);
+		createEAttribute(localizedTextEClass, LOCALIZED_TEXT__TEXT);
+		createEReference(localizedTextEClass, LOCALIZED_TEXT__LOCALE);
+		createEReference(localizedTextEClass, LOCALIZED_TEXT__MESSAGE);
+
+		localeEClass = createEClass(LOCALE);
+		createEAttribute(localeEClass, LOCALE__ID);
+		createEReference(localeEClass, LOCALE__LOCALIZED_TEXTS);
+		createEAttribute(localeEClass, LOCALE__CODE);
 	}
 
 	/**
@@ -210,9 +328,21 @@ public class MessagesPackageImpl extends EPackageImpl implements MessagesPackage
 		initEClass(messageManagementEClass, MessageManagement.class, "MessageManagement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMessageManagement_Id(), ecorePackage.getEString(), "id", null, 0, 1, MessageManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessageManagement_Messages(), this.getMessage(), null, "messages", null, 0, -1, MessageManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageManagement_Locales(), this.getLocale(), null, "locales", null, 0, -1, MessageManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageEClass, Message.class, "Message", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMessage_Id(), ecorePackage.getEString(), "id", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessage_LocalizedTexts(), this.getLocalizedText(), this.getLocalizedText_Message(), "localizedTexts", null, 0, -1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(localizedTextEClass, LocalizedText.class, "LocalizedText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLocalizedText_Text(), ecorePackage.getEString(), "text", null, 0, 1, LocalizedText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLocalizedText_Locale(), this.getLocale(), this.getLocale_LocalizedTexts(), "locale", null, 1, 1, LocalizedText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLocalizedText_Message(), this.getMessage(), this.getMessage_LocalizedTexts(), "message", null, 1, 1, LocalizedText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(localeEClass, Locale.class, "Locale", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLocale_Id(), ecorePackage.getEString(), "id", null, 0, 1, Locale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLocale_LocalizedTexts(), this.getLocalizedText(), this.getLocalizedText_Locale(), "localizedTexts", null, 0, -1, Locale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLocale_Code(), ecorePackage.getEString(), "code", null, 0, 1, Locale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

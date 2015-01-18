@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.headstartdevelopment.easymessages.messages:MessageManagement xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.headstartdevelopment.easymessages.messages="http://com/headstartdevelopment/easymessages/messages" id="FirstMessageManagement">
+  <messages id="MSG1"/>
+  <messages id="MSG2"/>
+</com.headstartdevelopment.easymessages.messages:MessageManagement>

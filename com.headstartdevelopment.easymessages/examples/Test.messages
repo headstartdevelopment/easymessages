@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <com.headstartdevelopment.easymessages.messages:MessageManagement xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.headstartdevelopment.easymessages.messages="http://com/headstartdevelopment/easymessages/messages" id="FirstMessageManagement">
-  <messages id="MSG1"/>
-  <messages id="MSG2"/>
+  <messages id="MSG1">
+    <localizedTexts text="This is a English test message" locale="//@locales.0"/>
+    <localizedTexts text="Das ist eine deutsche Testnachricht" locale="//@locales.1"/>
+  </messages>
+  <messages id="MSG2">
+    <localizedTexts text="This is another test message" locale="//@locales.0"/>
+    <localizedTexts text="Dies ist eine weitere deutsche Testnachricht" locale="//@locales.1"/>
+  </messages>
+  <locales id="ENGLISH" localizedTexts="//@messages.0/@localizedTexts.0 //@messages.1/@localizedTexts.0" code="en"/>
+  <locales id="GERMAN" localizedTexts="//@messages.0/@localizedTexts.1 //@messages.1/@localizedTexts.1" code="de"/>
 </com.headstartdevelopment.easymessages.messages:MessageManagement>
