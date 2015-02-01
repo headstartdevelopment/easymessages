@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/table/description/1.1.0" name="easymessages" version="8.1.0">
+  <ownedViewpoints name="messages" modelFileExtension="messages">
+    <ownedRepresentations xsi:type="description_1:CrossTableDescription" name="messages.table" domainClass="messages.MessageManagement">
+      <ownedLineMappings name="message.line" domainClass="messages.Message"/>
+      <ownedColumnMappings name="locale.column" domainClass="messages.Locale"/>
+      <intersection name="message_local.intersection" lineMapping="//@ownedViewpoints[name='messages']/@ownedRepresentations[name='messages.table']/@ownedLineMappings[name='message.line']" columnMapping="//@ownedViewpoints[name='messages']/@ownedRepresentations[name='messages.table']/@ownedColumnMappings.0" columnFinderExpression="[/]" domainClass="messages.LocalizedText"/>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>
